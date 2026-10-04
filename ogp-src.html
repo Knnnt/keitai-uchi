@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>OGP source（1200x630）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=M+PLUS+Rounded+1c:wght@500;800&display=block">
+<style>
+  :root {
+    --ink: #3b1d33;
+    --pink: #ff4f9a;
+    --pink-d: #d92f78;
+    --body-a: #fff8fb; --body-b: #f8d3e3; --body-c: #eeb2cc; --body-edge: #d995b4;
+    --key-a: #ffffff; --key-b: #f3e7ee; --key-edge: #d6b6c7; --key-ink: #4a2a3d; --key-sub: #c23a73;
+    --lcd-a: #effffc; --lcd-b: #c3efe9; --lcd-ink: #0f3442; --lcd-dim: #4f7f88; --ok: #08884a;
+    --dot: "DotGothic16", monospace;
+    --round: "M PLUS Rounded 1c", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative;
+    font-family: var(--round);
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, .85) 0 2px, transparent 3px) 0 0 / 32px 32px,
+      linear-gradient(150deg, #fff3f8 0%, #fbd6e6 52%, #ece3ff 100%);
+  }
+  .spark { position: absolute; color: #fff; text-shadow: 0 0 10px rgba(255, 79, 154, .7); }
+
+  .text { position: absolute; left: 86px; top: 0; bottom: 0; width: 640px; display: flex; flex-direction: column; justify-content: center; }
+  .badge {
+    align-self: flex-start;
+    padding: 6px 20px 7px;
+    border: 3px solid var(--pink);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--pink-d);
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: .08em;
+  }
+  h1 {
+    margin-top: 18px;
+    font-family: var(--dot);
+    font-weight: 400;
+    font-size: 132px;
+    line-height: 1.04;
+    text-shadow: 5px 5px 0 #fff, 10px 10px 0 rgba(255, 79, 154, .35);
+  }
+  h1 span { display: block; white-space: nowrap; }
+  h1 em { font-style: normal; color: var(--pink); }
+  .catch { margin-top: 22px; font-size: 44px; font-weight: 800; letter-spacing: .02em; }
+  .sub {
+    margin-top: 14px;
+    align-self: flex-start;
+    padding: 8px 18px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .8);
+    font-size: 25px;
+    font-weight: 800;
+    color: #6b3352;
+  }
+  .sub b { color: var(--pink-d); }
+
+  /* ケータイ */
+  .phone {
+    position: absolute;
+    right: 92px;
+    top: 42px;
+    width: 300px;
+    transform: rotate(8deg);
+    filter: drop-shadow(0 24px 30px rgba(120, 40, 80, .3));
+  }
+  .lid, .pad {
+    background: linear-gradient(155deg, var(--body-a) 0%, var(--body-b) 46%, var(--body-c) 100%);
+    border: 1.5px solid var(--body-edge);
+    box-shadow: inset 0 3px 0 rgba(255, 255, 255, .9), inset 0 -5px 10px rgba(0, 0, 0, .08);
+  }
+  .antenna { position: absolute; top: -34px; right: 36px; width: 20px; height: 48px; border-radius: 10px 10px 4px 4px; background: linear-gradient(90deg, #3a3640, #7a737c 45%, #2a272f); }
+  .lid { position: relative; height: 264px; padding: 18px 16px 16px; border-radius: 52px 52px 18px 18px; }
+  .speaker { width: 74px; height: 9px; margin: 0 auto 12px; border-radius: 5px; background: repeating-linear-gradient(90deg, rgba(0, 0, 0, .35) 0 4px, transparent 4px 7px); }
+  .lcd {
+    height: 206px;
+    border: 8px solid #17161c;
+    border-radius: 16px;
+    background: linear-gradient(172deg, var(--lcd-a), var(--lcd-b));
+    font-family: var(--dot);
+    color: var(--lcd-ink);
+    overflow: hidden;
+    position: relative;
+  }
+  .lcd::after { content: ""; position: absolute; inset: 0; background: linear-gradient(118deg, rgba(255, 255, 255, .25) 0 16%, transparent 16.3%); }
+  .st { display: flex; justify-content: space-between; align-items: center; height: 22px; padding: 0 8px; font-size: 13px; background: rgba(15, 52, 66, .08); border-bottom: 1px solid rgba(15, 52, 66, .2); }
+  .st svg { height: 11px; width: auto; fill: currentColor; }
+  .tb { margin: 6px 8px 0; padding: 2px 8px; background: var(--lcd-ink); color: var(--lcd-a); font-size: 14px; border-radius: 3px; display: flex; justify-content: space-between; }
+  .row { margin: 4px 10px 0; font-size: 14px; border-bottom: 1px dashed rgba(15, 52, 66, .3); padding-bottom: 2px; }
+  .row b { font-weight: 400; color: var(--lcd-dim); }
+  .tgt { font-size: 20px; }
+  .tgt .d { color: var(--ok); }
+  .tgt .n { background: rgba(255, 79, 154, .22); box-shadow: inset 0 -3px 0 var(--pink); }
+  .bd { margin: 6px 10px 0; padding: 4px 8px; height: 46px; background: rgba(255, 255, 255, .6); border: 1px solid rgba(15, 52, 66, .25); border-radius: 4px; font-size: 28px; line-height: 1.3; }
+  .bd .ok { color: var(--ok); }
+  .bd .tog { background: var(--ok); color: var(--lcd-a); box-shadow: inset 0 -3px 0 var(--pink); }
+  .bd .caret { display: inline-block; width: 3px; height: 26px; vertical-align: -4px; background: var(--lcd-ink); }
+  .cd { margin: 6px 10px 0; display: flex; gap: 3px; font-size: 15px; }
+  .cd span { min-width: 22px; text-align: center; border: 1px solid rgba(15, 52, 66, .25); border-radius: 3px; line-height: 20px; }
+  .cd .k { border: none; color: var(--lcd-dim); font-size: 12px; min-width: 0; }
+  .cd .cur { background: var(--lcd-ink); color: var(--lcd-a); }
+  .hinge { position: relative; z-index: 1; height: 18px; margin: -3px 16px; border-radius: 10px; background: linear-gradient(180deg, var(--body-c), var(--body-a) 45%, var(--body-c)); box-shadow: 0 2px 5px rgba(0, 0, 0, .18); }
+  .pad { height: 272px; padding: 14px 18px; border-radius: 18px 18px 52px 52px; }
+  .dpad { width: 104px; height: 50px; margin: 0 auto 14px; border-radius: 50%; background: linear-gradient(180deg, var(--key-a), var(--key-b)); box-shadow: 0 4px 0 var(--key-edge); display: grid; place-items: center; position: relative; }
+  .dpad i { width: 42px; height: 22px; border-radius: 50%; background: var(--body-b); box-shadow: inset 0 2px 4px rgba(0, 0, 0, .18); }
+  .dpad::after { content: "▶"; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); color: var(--pink); font-size: 14px; }
+  .keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px 12px; }
+  .keys div {
+    height: 38px;
+    border-radius: 14px 14px 18px 18px;
+    background: linear-gradient(180deg, var(--key-a), var(--key-b));
+    box-shadow: 0 3px 0 var(--key-edge), 0 5px 8px rgba(80, 30, 60, .15);
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+    color: var(--key-ink);
+  }
+  .keys b { font-size: 20px; font-weight: 800; }
+  .keys s { text-decoration: none; font-size: 14px; font-weight: 800; color: var(--key-sub); }
+  .keys .on { transform: translateY(3px); box-shadow: 0 0 0 var(--key-edge), inset 0 3px 6px rgba(0, 0, 0, .15); background: linear-gradient(180deg, #ffe6f1, #f7cfe0); }
+  .strap { position: absolute; left: -16px; bottom: 120px; width: 5px; height: 86px; border-radius: 3px; transform: rotate(10deg); transform-origin: top; background: repeating-linear-gradient(180deg, #ff6aa8 0 7px, #fff 7px 12px, #8fd8ff 12px 19px, #fff 19px 24px); }
+  .strap::after { content: ""; position: absolute; left: -12px; bottom: -26px; width: 30px; height: 30px; background: radial-gradient(circle at 35% 30%, #fff 0 12%, #ff8fc0 13% 60%, #e23c86 100%); clip-path: polygon(50% 100%, 0 38%, 12% 6%, 34% 0, 50% 16%, 66% 0, 88% 6%, 100% 38%); }
+</style>
+</head>
+<body>
+  <span class="spark" style="left:44px;top:40px;font-size:34px">✦</span>
+  <span class="spark" style="left:700px;top:64px;font-size:26px">✧</span>
+  <span class="spark" style="left:1140px;top:560px;font-size:30px">✦</span>
+  <span class="spark" style="left:690px;top:540px;font-size:22px">✦</span>
+
+  <div class="text">
+    <p class="badge">全国統一・第1回</p>
+    <h1><span>ケータイ</span><span><em>打ち</em>検定</span></h1>
+    <p class="catch">あの頃の親指、まだ動く？</p>
+    <p class="sub">平成メール5通を<b>トグル入力</b>で。親指は何年製？</p>
+  </div>
+
+  <div class="phone">
+    <div class="antenna"></div>
+    <div class="lid">
+      <div class="speaker"></div>
+      <div class="lcd">
+        <div class="st">
+          <svg viewBox="0 0 24 12"><path d="M1 1h6L4 5zM4 5v7" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="8" width="3" height="4"/><rect x="13.5" y="5" width="3" height="7"/><rect x="18" y="1.5" width="3" height="10.5"/></svg>
+          <span>1/5</span>
+          <svg viewBox="0 0 22 12"><rect x="1" y="1" width="17" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="19" y="4" width="2" height="4"/><rect x="3" y="3" width="4" height="6"/><rect x="8" y="3" width="4" height="6"/><rect x="13" y="3" width="3.2" height="6"/></svg>
+        </div>
+        <div class="tb"><span>メール作成</span><span>宛先：好きな人</span></div>
+        <div class="row tgt"><b style="font-size:14px">お題：</b><span class="d">おやす</span><span class="n">み</span>ー</div>
+        <div class="bd"><span class="ok">おやす</span><span class="tog">み</span><span class="caret"></span></div>
+        <div class="cd"><span class="k">[7]</span><span>ま</span><span class="cur">み</span><span>む</span><span>め</span><span>も</span></div>
+      </div>
+    </div>
+    <div class="hinge"></div>
+    <div class="pad">
+      <div class="dpad"><i></i></div>
+      <div class="keys">
+        <div><b>1</b><s>あ</s></div><div><b>2</b><s>か</s></div><div><b>3</b><s>さ</s></div>
+        <div><b>4</b><s>た</s></div><div><b>5</b><s>な</s></div><div><b>6</b><s>は</s></div>
+        <div class="on"><b>7</b><s>ま</s></div><div><b>8</b><s>や</s></div><div><b>9</b><s>ら</s></div>
+        <div><b>＊</b><s>゛゜</s></div><div><b>0</b><s>わ</s></div><div><b>＃</b><s>、。</s></div>
+      </div>
+    </div>
+    <div class="strap"></div>
+  </div>
+</body>
+</html>

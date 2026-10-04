@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ja" data-theme="pink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ケータイ打ち検定｜あの頃の親指、まだ動く？</title>
+<meta name="description" content="ガラケーの“ケータイ打ち（トグル入力）”で平成のメールを5通打つタイムアタック。送信までのタイムで、あなたの親指の年式を判定します。">
+<meta name="theme-color" content="#f7cfe0">
+<link rel="canonical" href="https://knnnt.github.io/keitai-uchi/">
+<meta property="og:title" content="ケータイ打ち検定｜あの頃の親指、まだ動く？">
+<meta property="og:description" content="ガラケーのトグル入力で平成メールを5通打つタイムアタック。あなたの親指は何年製？">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knnnt.github.io/keitai-uchi/">
+<meta property="og:image" content="https://knnnt.github.io/keitai-uchi/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="ケータイ打ち検定">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ケータイ打ち検定｜あの頃の親指、まだ動く？">
+<meta name="twitter:description" content="ガラケーのトグル入力で平成メールを5通打つタイムアタック。あなたの親指は何年製？">
+<meta name="twitter:image" content="https://knnnt.github.io/keitai-uchi/ogp.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=M+PLUS+Rounded+1c:wght@500;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-screen="title">
+
+<!-- ===== タイトル ===== -->
+<section id="screen-title" class="screen" aria-labelledby="logo">
+  <div class="title-wrap">
+    <div class="title-hero">
+      <div class="title-text">
+        <p class="badge">全国統一・第1回</p>
+        <h1 class="logo" id="logo"><span>ケータイ</span><span><em>打ち</em>検定</span></h1>
+        <p class="catch">あの頃の親指、<br>まだ動く？</p>
+      </div>
+      <div class="mini-phone" aria-hidden="true">
+        <div class="mp-antenna"></div>
+        <div class="mp-lid">
+          <div class="mp-speaker"></div>
+          <div class="mp-lcd">
+            <div class="mp-status">
+              <svg class="ico-ant" viewBox="0 0 24 12"><path d="M1 1h6L4 5zM4 5v7" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="8" width="3" height="4"/><rect x="13.5" y="5" width="3" height="7"/><rect x="18" y="1.5" width="3" height="10.5"/></svg>
+              <svg class="ico-bat" viewBox="0 0 22 12"><rect x="1" y="1" width="17" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="19" y="4" width="2" height="4"/><rect x="3" y="3" width="4" height="6"/><rect x="8" y="3" width="4" height="6"/><rect x="13" y="3" width="3.2" height="6"/></svg>
+            </div>
+            <div class="mp-clock js-clock">20:16</div>
+            <div class="mp-date js-date">10/4(土)</div>
+            <div class="mp-mail"><svg class="ico-mail" viewBox="0 0 16 12"><rect x=".8" y=".8" width="14.4" height="10.4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1 1l7 6 7-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>新着メール<br>1件</div>
+          </div>
+        </div>
+        <div class="mp-hinge"></div>
+        <div class="mp-body">
+          <div class="mp-dpad"><i></i></div>
+          <div class="mp-keys"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>*</i><i>0</i><i>#</i></div>
+        </div>
+        <div class="mp-strap"><b></b></div>
+      </div>
+      <span class="spark s1" aria-hidden="true">✦</span>
+      <span class="spark s2" aria-hidden="true">✧</span>
+      <span class="spark s3" aria-hidden="true">✦</span>
+    </div>
+
+    <ol class="howto">
+      <li><span class="kc">1</span>を3回で「う」。同じキーが続く時は<span class="kc">→</span></li>
+      <li><span class="kc">＊</span>で゛゜と小さい字、<span class="kc">＃</span>で、。？！…</li>
+      <li>平成メール5通の送信タイムで親指の年式を判定</li>
+    </ol>
+
+    <button type="button" id="btn-start" class="btn btn-start">検定をはじめる<span aria-hidden="true">▶</span></button>
+
+    <div class="title-foot">
+      <p class="records"><span id="title-best">今日のベスト：まだなし</span><span id="title-tier"></span></p>
+      <div class="title-tools">
+        <button type="button" id="btn-theme" class="chip">機種変更<small>（0円）</small></button>
+        <button type="button" class="chip btn-mute" aria-pressed="false">🔊 音あり</button>
+      </div>
+      <p class="note"><span id="title-set">本日の出題</span>・PCはキーボードでもOK</p>
+      <p class="note">※実在の検定ではありません。合格証も出ません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 検定本番 ===== -->
+<section id="screen-game" class="screen" data-phase="idle" hidden>
+  <div class="stage">
+    <aside class="side side-left" aria-hidden="true">
+      <p class="side-logo">ケータイ<br><em>打ち</em>検定</p>
+      <p class="side-catch">あの頃の親指、<br>まだ動く？</p>
+    </aside>
+
+    <div class="phone" id="phone">
+      <div class="lid">
+        <div class="lid-top">
+          <button type="button" class="lid-btn" id="btn-quit" aria-label="検定をやめる">✕<small>やめる</small></button>
+          <div class="speaker"></div>
+          <button type="button" class="lid-btn btn-mute" aria-pressed="false" aria-label="音のオン・オフ">🔊</button>
+        </div>
+        <div class="lcd" id="lcd">
+          <div class="lcd-status">
+            <svg class="ico-ant" viewBox="0 0 24 12" aria-hidden="true"><path d="M1 1h6L4 5zM4 5v7" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="8" width="3" height="4"/><rect x="13.5" y="5" width="3" height="7"/><rect x="18" y="1.5" width="3" height="10.5"/></svg>
+            <svg class="ico-mail" viewBox="0 0 16 12" aria-hidden="true"><rect x=".8" y=".8" width="14.4" height="10.4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1 1l7 6 7-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span>メール作成</span>
+            <span class="sp"></span>
+            <span class="js-clock">20:16</span>
+            <svg class="ico-bat" viewBox="0 0 22 12" aria-hidden="true"><rect x="1" y="1" width="17" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="19" y="4" width="2" height="4"/><rect x="3" y="3" width="4" height="6"/><rect x="8" y="3" width="4" height="6"/><rect x="13" y="3" width="3.2" height="6"/></svg>
+          </div>
+          <div class="lcd-compose">
+            <div class="lcd-titlebar"><span class="tb-to">宛先：<span id="g-to">親友</span></span><span class="tb-level" id="g-level">1/5・初級</span></div>
+            <div class="lcd-target"><b>お題</b><span id="g-target" class="target-text"></span></div>
+            <div class="lcd-bodybox"><div id="g-body" class="body-text" aria-live="off"></div></div>
+            <div class="lcd-info">
+              <div class="lcd-cands" id="g-cands" aria-hidden="true"></div>
+              <div class="lcd-msg" id="g-msg" role="status"></div>
+            </div>
+            <div class="lcd-meter"><span>経過<b id="g-time">0.0</b>秒</span><span>打鍵<b id="g-keys">0</b>回</span></div>
+          </div>
+          <div class="lcd-overlay" id="g-overlay" hidden></div>
+        </div>
+      </div>
+      <div class="hinge" aria-hidden="true"></div>
+      <div class="pad" id="keypad">
+        <div class="fn-row">
+          <button type="button" class="key fn fn-clear" data-k="clear" aria-label="クリア（1字消す）"><span class="fn-main">クリア</span><span class="fn-sub">1字消す</span></button>
+          <button type="button" class="key dpad" data-k="right" aria-label="右キー（確定）">
+            <span class="dp-ring"><i class="dp-u">▲</i><i class="dp-d">▼</i><i class="dp-l">◀</i><i class="dp-r">▶</i><span class="dp-center">確定</span></span>
+          </button>
+          <button type="button" class="key fn fn-hint" data-k="hint" id="btn-hint" aria-label="ヒント（打ち方を表示）"><span class="fn-main">ヒント</span><span class="fn-sub">打ち方</span></button>
+        </div>
+        <div class="keys">
+          <button type="button" class="key num" data-k="1" aria-label="1 あいうえお"><span class="kd">1</span><span class="kk">あ</span><span class="ka">.@/</span></button>
+          <button type="button" class="key num" data-k="2" aria-label="2 かきくけこ"><span class="kd">2</span><span class="kk">か</span><span class="ka">ABC</span></button>
+          <button type="button" class="key num" data-k="3" aria-label="3 さしすせそ"><span class="kd">3</span><span class="kk">さ</span><span class="ka">DEF</span></button>
+          <button type="button" class="key num" data-k="4" aria-label="4 たちつてと"><span class="kd">4</span><span class="kk">た</span><span class="ka">GHI</span></button>
+          <button type="button" class="key num" data-k="5" aria-label="5 なにぬねの"><span class="kd">5</span><span class="kk">な</span><span class="ka">JKL</span></button>
+          <button type="button" class="key num" data-k="6" aria-label="6 はひふへほ"><span class="kd">6</span><span class="kk">は</span><span class="ka">MNO</span></button>
+          <button type="button" class="key num" data-k="7" aria-label="7 まみむめも"><span class="kd">7</span><span class="kk">ま</span><span class="ka">PQRS</span></button>
+          <button type="button" class="key num" data-k="8" aria-label="8 やゆよ"><span class="kd">8</span><span class="kk">や</span><span class="ka">TUV</span></button>
+          <button type="button" class="key num" data-k="9" aria-label="9 らりるれろ"><span class="kd">9</span><span class="kk">ら</span><span class="ka">WXYZ</span></button>
+          <button type="button" class="key num" data-k="*" aria-label="アスタリスク 濁点・半濁点・小文字"><span class="kd">＊</span><span class="kk">゛゜</span><span class="ka">小文字</span></button>
+          <button type="button" class="key num" data-k="0" aria-label="0 わをんー"><span class="kd">0</span><span class="kk">わ</span><span class="ka">をんー</span></button>
+          <button type="button" class="key num" data-k="#" aria-label="シャープ 記号"><span class="kd">＃</span><span class="kk">、。</span><span class="ka">？！…</span></button>
+        </div>
+        <p class="pc-mini">PC：数字キー／＊は * か .／＃は # か /／→ で確定／BackSpaceでクリア／Hでヒント</p>
+      </div>
+    </div>
+
+    <aside class="side side-right">
+      <div class="guide-card">
+        <p class="guide-title">⌨ PCで受験する人へ</p>
+        <dl class="guide-list">
+          <div><dt>0〜9</dt><dd>数字キー・テンキー</dd></div>
+          <div><dt>＊ ゛゜小</dt><dd><kbd>*</kbd> か <kbd>.</kbd></dd></div>
+          <div><dt>＃ 記号</dt><dd><kbd>#</kbd> か <kbd>/</kbd></dd></div>
+          <div><dt>→ 確定</dt><dd><kbd>→</kbd> か <kbd>Enter</kbd></dd></div>
+          <div><dt>クリア</dt><dd><kbd>BackSpace</kbd></dd></div>
+          <div><dt>ヒント</dt><dd><kbd>H</kbd></dd></div>
+        </dl>
+        <p class="guide-note">※日本語入力（IME）はオフで。<br>0キーは「わをんー」です（機種差があったアレ）。</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== 結果 ===== -->
+<section id="screen-result" class="screen" hidden>
+  <div class="stage">
+    <div class="phone phone-result">
+      <div class="lid">
+        <div class="lid-top">
+          <span class="lid-label">受信BOX</span>
+          <div class="speaker"></div>
+          <button type="button" class="lid-btn btn-mute" aria-pressed="false" aria-label="音のオン・オフ">🔊</button>
+        </div>
+        <div class="lcd lcd-result">
+          <div class="lcd-status">
+            <svg class="ico-ant" viewBox="0 0 24 12" aria-hidden="true"><path d="M1 1h6L4 5zM4 5v7" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="8" width="3" height="4"/><rect x="13.5" y="5" width="3" height="7"/><rect x="18" y="1.5" width="3" height="10.5"/></svg>
+            <svg class="ico-mail" viewBox="0 0 16 12" aria-hidden="true"><rect x=".8" y=".8" width="14.4" height="10.4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1 1l7 6 7-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span>受信メール</span>
+            <span class="sp"></span>
+            <span class="js-clock">20:16</span>
+            <svg class="ico-bat" viewBox="0 0 22 12" aria-hidden="true"><rect x="1" y="1" width="17" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="19" y="4" width="2" height="4"/><rect x="3" y="3" width="4" height="6"/><rect x="8" y="3" width="4" height="6"/><rect x="13" y="3" width="3.2" height="6"/></svg>
+          </div>
+          <div class="r-mailhead">
+            <p>From：ケータイ打ち検定協会</p>
+            <p>件名：判定結果（受験番号 No.<span id="r-no">0001</span>）</p>
+          </div>
+          <div class="r-main">
+            <p class="r-lead">あなたの親指は</p>
+            <p class="r-year"><span id="r-year">2005</span><small>年製</small></p>
+            <p class="r-name" id="r-name">パケ放題世代</p>
+            <p class="r-comment" id="r-comment">「…」</p>
+            <div class="stamp" aria-hidden="true"><span>親指<br>認定</span></div>
+          </div>
+          <dl class="r-stats">
+            <div><dt>タイム</dt><dd><span id="r-time">48.2</span><small>秒</small></dd></div>
+            <div><dt>総打鍵数</dt><dd><span id="r-keys">152</span><small>回</small></dd></div>
+            <div><dt>ミス（クリア）</dt><dd><span id="r-miss">3</span><small>回</small></dd></div>
+            <div><dt>1分あたり</dt><dd><span id="r-cpm">72</span><small>文字</small></dd></div>
+          </dl>
+          <p class="r-next" id="r-next"></p>
+          <p class="r-best" id="r-best"></p>
+        </div>
+      </div>
+      <div class="hinge" aria-hidden="true"></div>
+      <div class="pad pad-result">
+        <a class="btn btn-x" id="btn-post" href="https://x.com/intent/tweet" target="_blank" rel="noopener">Xで結果をポスト</a>
+        <div class="btn-row">
+          <button type="button" class="btn btn-img" id="btn-image">画像で保存</button>
+          <button type="button" class="btn btn-retry" id="btn-retry">もう一回</button>
+        </div>
+        <button type="button" class="btn-link" id="btn-home">タイトルへもどる</button>
+      </div>
+    </div>
+
+    <section class="sentbox" aria-labelledby="sent-title">
+      <h2 id="sent-title">送信済みBOX <small id="sent-date"></small></h2>
+      <ol id="sent-list"></ol>
+      <p class="sent-note">お題は毎日0時（日本時間）に入れ替わります。同じ日なら全国みんな同じ5通。</p>
+    </section>
+  </div>
+</section>
+
+<div class="rotate-note"><p><span aria-hidden="true">📱</span>ケータイなので<br>縦持ちでどうぞ</p></div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
