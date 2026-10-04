@@ -1205,3 +1205,9 @@ kbd {
   .mini-phone { transform: rotate(9deg); }
   .mp-mail, .ov-incoming, .r-best .new, .body-text .caret { opacity: 1; }
 }
+
+/* ほかの作品へのリンク（どれか1本が伸びたときに他の作品へも流れるように） */
+.more-works { margin: 18px auto 0; max-width: 520px; text-align: center; font-size: 12px; line-height: 1.6; opacity: .85; }
+.more-works-title { margin: 0 0 4px; font-weight: 700; letter-spacing: .08em; }
+.more-works ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 14px; }
+.more-works a { color: inherit; text-decoration: underline; text-underline-offset: 2px; display: inline-block; padding: 6px 0; }
