@@ -36,7 +36,7 @@
 ```bash
 "/c/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --disable-gpu --hide-scrollbars \
   --window-size=1200,630 --virtual-time-budget=5000 \
-  --screenshot="<保存先の絶対パス>\ogp-raw.png" "file:///C:/VS_codeX/claude-makase/keitai-uchi/ogp-src.html"
+  --screenshot="<保存先の絶対パス>\ogp-raw.png" "file:///<このフォルダの絶対パス>/ogp-src.html"
 ```
 
 ## ファイル
